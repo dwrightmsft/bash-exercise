@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Print output header
 echo "[$(date)] - Begin script execution:"
@@ -8,16 +8,16 @@ echo
 geoendpoint="https://freegeoip.app/json/"
 
 location=$(curl -s $geoendpoint)
-longitude=$(echo $location | jq -r .longitude)
+longitude=$(echo $location | jq -r .longitude) 
 latitude=$(echo $location | jq -r .latitude)
-country=$(echo $location | jq -r .country)
+country=$(echo $location | jq -r .country_name)
 city=$(echo $location | jq -r .city)
 postcode=$(echo $location | jq -r .zip_code)
 echo "Current location: $postcode, $city, $country"
 echo
 
 # Get weather data
-weatherendpoint="htps://www.7timer.info/bin/civil.php?lon=$longitude&lat=$latitude&product=civil&unit=british&output=json"
+weatherendpoint="https://www.7timer.info/bin/civil.php?lon=$longitude&lat=$latitude&product=civil&unit=british&output=json"
 weather=$(curl -s $weatherendpoint)
 
 if [[ -n $weather ]]; then
@@ -39,7 +39,7 @@ windspeed=$(echo $weather | jq -r .dataseries[0].wind10m.speed)
 echo "Next weather update:"
 echo ""
 echo "Summary = $weathersummary"
-echo "Temperature (C) = $temperature"
+echo "Temperature (F) = $temperature"
 echo "Precipitation = $precipitation"
 echo "Humidity = $humidity"
 echo "Wind Direction = $winddir"
