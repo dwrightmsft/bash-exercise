@@ -1,5 +1,5 @@
 # Notes
-# Executive summary
+# Summary
 The goal here was to find and fix multiple errors in the supplied script. 7 errors identified, 6 errors fixed, 1 error partially fixed. Committed changes and sent pull request. Notes added in Markdown format to reflect README.MD file. 
 # Setting up
 Made sense to do this on a Raspberry Pi, but needed to understand Visual Studio Code and GitHub. Watched tutorials: GitHub for beginners: https://www.youtube.com/watch?v=RGOj5yH7evk, using GitHub with Visual Studio Code: https://code.visualstudio.com/docs/editor/github. Was able to set up GitHub account, log in on Raspberry Pi and clone repository so I could work on the script.
